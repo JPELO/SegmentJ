@@ -72,15 +72,15 @@ for (i=0; i<list.length; i++) {
 				saveAs("Results", dir_msdata + subscanName + "_msdata" + ".csv");
 				selectWindow(subscanName + "_msdata" + ".csv"); run("Close");
 				
-//				// Export .STL mesh file.
-//				selectWindow(subscanName + ".tif");
-//				run("3D Viewer");
-//				call("ij3d.ImageJ3DViewer.setCoordinateSystem", "false");
-//				call("ij3d.ImageJ3DViewer.add", subscanName + ".tif", "White", subscanName +
-//					".tif", "75", "true", "true", "true", "3", "2");
-//				call("ij3d.ImageJ3DViewer.select", subscanName + ".tif");
-//				call("ij3d.ImageJ3DViewer.exportContent", "STL ASCII", dir_stl + subscanName + ".stl");
-//				call("ij3d.ImageJ3DViewer.close");
+				// Export .STL mesh file.
+				selectWindow(subscanName + ".tif");
+				run("3D Viewer");
+				call("ij3d.ImageJ3DViewer.setCoordinateSystem", "false");
+				call("ij3d.ImageJ3DViewer.add", subscanName + ".tif", "White", subscanName +
+					".tif", "75", "true", "true", "true", "3", "2");
+				call("ij3d.ImageJ3DViewer.select", subscanName + ".tif");
+				call("ij3d.ImageJ3DViewer.exportContent", "STL ASCII", dir_stl + subscanName + ".stl");
+				call("ij3d.ImageJ3DViewer.close");
 				
 				// Close subsection windows
 				selectWindow(scanName + ".tif");
