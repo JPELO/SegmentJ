@@ -27,6 +27,9 @@ for (i=0; i<list.length; i++) {
 	open(dir_scans + list[i]);
 	scanName = substring(getTitle,0,getTitle.length-4);
 
+	// Set file pixel dimensions to ensure all scans in batch have the same pixel calibration resolution
+	run("Properties...", "unit=pixel pixel_width=1 pixel_height=1 voxel_depth=1");
+
 	// Get scan size dimension & number of X,Y,Z locations.
 	getDimensions(width, height, channels, slices, nFrames);
 	nX = floor(width/edgeLength); nY = floor(height/edgeLength); nZ = floor(slices/edgeLength);
